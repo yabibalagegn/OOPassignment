@@ -1,0 +1,176 @@
+import java.util.*;
+    public class Assinment2 
+    {
+    public static void main(String[] args) {
+      Scanner h=new Scanner(System.in) ; 
+        System.out.println("ENTER CUSTOMER INFORMATION");
+        System.out.println(" CUSTOMER NAME ");
+        String name=h.nextLine();
+        System.out.println(" CUSTOMER BANK ACCOUNT ");
+        int account=h.nextInt();
+        System.out.println(" CUSTOMER BALANCE ");
+        float balance=h.nextFloat();
+        System.out.println("YOU ARE SUCCISFULY REGESTER ON OUR BANK");
+      System.out.println("ENTER 1 TO DEPOSIT YOUR BALANCE OR ENTER 2 TO WITHDRAW YOUR BALANCE");
+      int chioce=h.nextInt();
+     if(chioce==1){
+       System.out.println("ENTER THE AMOUNT TO DEPOSIT");
+      float deposit=h.nextFloat();
+      balance=deposit+balance;
+      System.out.println("YOUR BALANCE IS UPDAT AND THE CURRENT BALANCE IS");
+       System.out.print(balance);
+     }
+     else {
+      System.out.println("ENTER THE AMOUNT TO WITHDERAW");
+      float withderaw=h.nextFloat();
+      if(balance> withderaw){
+      balance=balance -withderaw;
+      System.out.println("YOUR BALANCE IS UPDAT AND THE CURRENT BALANCE IS");
+       System.out.print(balance);    
+    }
+     else { 
+       System.out.println("YOU ENTER AMOUNT TO WITHDERAW IS GRETER THAN YOUR BALANCE PLESS ENTER LESS AMOUNT"); 
+             }
+     }
+    }
+  } import java.util.*;
+    public class Assinment2 
+    {
+    public static void main(String[] args) {
+      Scanner h=new Scanner(System.in) ; 
+        System.out.println("ENTER CUSTOMER INFORMATION");
+        System.out.println(" CUSTOMER NAME ");
+        String name=h.nextLine();
+        System.out.println(" CUSTOMER BANK ACCOUNT ");
+        int account=h.nextInt();
+        System.out.println(" CUSTOMER BALANCE ");
+        float balance=h.nextFloat();
+        System.out.println("YOU ARE SUCCISFULY REGESTER ON OUR BANK");
+      System.out.println("ENTER 1 TO DEPOSIT YOUR BALANCE OR ENTER 2 TO WITHDRAW YOUR BALANCE");
+      int chioce=h.nextInt();
+     if(chioce==1){
+       System.out.println("ENTER THE AMOUNT TO DEPOSIT");
+      float deposit=h.nextFloat();
+      balance=deposit+balance;
+      System.out.println("YOUR BALANCE IS UPDAT AND THE CURRENT BALANCE IS");
+       System.out.print(balance);
+     }
+     else {
+      System.out.println("ENTER THE AMOUNT TO WITHDERAW");
+      float withderaw=h.nextFloat();
+      if(balance> withderaw){
+      balance=balance -withderaw;
+      System.out.println("YOUR BALANCE IS UPDAT AND THE CURRENT BALANCE IS");
+       System.out.print(balance);    
+    }
+     else { 
+       System.out.println("YOU ENTER AMOUNT TO WITHDERAW IS GRETER THAN YOUR BALANCE PLESS ENTER LESS AMOUNT"); 
+             }
+     }
+    }
+  } import java.util.*;
+    public class Assinment2 
+    {
+    public static void main(String[] args) {
+      Scanner h=new Scanner(System.in) ; 
+        System.out.println("ENTER CUSTOMER INFORMATION");
+        System.out.println(" CUSTOMER NAME ");
+        String name=h.nextLine();
+        System.out.println(" CUSTOMER BANK ACCOUNT ");
+        int account=h.nextInt();
+        System.out.println(" CUSTOMER BALANCE ");
+        float balance=h.nextFloat();
+        System.out.println("YOU ARE SUCCISFULY REGESTER ON OUR BANK");
+      System.out.println("ENTER 1 TO DEPOSIT YOUR BALANCE OR ENTER 2 TO WITHDRAW YOUR BALANCE");
+      int chioce=h.nextInt();
+     if(chioce==1){
+       System.out.println("ENTER THE AMOUNT TO DEPOSIT");
+      float deposit=h.nextFloat();
+      balance=deposit+balance;
+      System.out.println("YOUR BALANCE IS UPDAT AND THE CURRENT BALANCE IS");
+       System.out.print(balance);
+     }
+     else {
+      System.out.println("ENTER THE AMOUNT TO WITHDERAW");
+      float withderaw=h.nextFloat();
+      if(balance> withderaw){
+      balance=balance -withderaw;
+      System.out.println("YOUR BALANCE IS UPDAT AND THE CURRENT BALANCE IS");
+       System.out.print(balance);    
+    }
+     else { 
+       System.out.println("YOU ENTER AMOUNT TO WITHDERAW IS GRETER THAN YOUR BALANCE PLESS ENTER LESS AMOUNT"); 
+             }
+     }
+    }
+  } import java.util.*;
+    public class Assinment2 
+    {
+    public static void main(String[] args) {
+      Scanner h=new Scanner(System.in) ; 
+        System.out.println("ENTER CUSTOMER INFORMATION");
+        System.out.println(" CUSTOMER NAME ");
+        String name=h.nextLine();
+        System.out.println(" CUSTOMER BANK ACCOUNT ");
+        int account=h.nextInt();
+        System.out.println(" CUSTOMER BALANCE ");
+        float balance=h.nextFloat();
+        System.out.println("YOU ARE SUCCISFULY REGESTER ON OUR BANK");
+      System.out.println("ENTER 1 TO DEPOSIT YOUR BALANCE OR ENTER 2 TO WITHDRAW YOUR BALANCE");
+      int chioce=h.nextInt();
+     if(chioce==1){
+       System.out.println("ENTER THE AMOUNT TO DEPOSIT");
+      float deposit=h.nextFloat();
+      balance=deposit+balance;
+      System.out.println("YOUR BALANCE IS UPDAT AND THE CURRENT BALANCE IS");
+       System.out.print(balance);
+     }
+     else {
+      System.out.println("ENTER THE AMOUNT TO WITHDERAW");
+      float withderaw=h.nextFloat();
+      if(balance> withderaw){
+      balance=balance -withderaw;
+      System.out.println("YOUR BALANCE IS UPDAT AND THE CURRENT BALANCE IS");
+       System.out.print(balance);    
+    }
+     else { 
+       System.out.println("YOU ENTER AMOUNT TO WITHDERAW IS GRETER THAN YOUR BALANCE PLESS ENTER LESS AMOUNT"); 
+             }
+     }
+    }
+  } import java.util.*;
+    public class Assinment2 
+    {
+    public static void main(String[] args) {
+      Scanner h=new Scanner(System.in) ; 
+        System.out.println("ENTER CUSTOMER INFORMATION");
+        System.out.println(" CUSTOMER NAME ");
+        String name=h.nextLine();
+        System.out.println(" CUSTOMER BANK ACCOUNT ");
+        int account=h.nextInt();
+        System.out.println(" CUSTOMER BALANCE ");
+        float balance=h.nextFloat();
+        System.out.println("YOU ARE SUCCISFULY REGESTER ON OUR BANK");
+      System.out.println("ENTER 1 TO DEPOSIT YOUR BALANCE OR ENTER 2 TO WITHDRAW YOUR BALANCE");
+      int chioce=h.nextInt();
+     if(chioce==1){
+       System.out.println("ENTER THE AMOUNT TO DEPOSIT");
+      float deposit=h.nextFloat();
+      balance=deposit+balance;
+      System.out.println("YOUR BALANCE IS UPDAT AND THE CURRENT BALANCE IS");
+       System.out.print(balance);
+     }
+     else {
+      System.out.println("ENTER THE AMOUNT TO WITHDERAW");
+      float withderaw=h.nextFloat();
+      if(balance> withderaw){
+      balance=balance -withderaw;
+      System.out.println("YOUR BALANCE IS UPDAT AND THE CURRENT BALANCE IS");
+       System.out.print(balance);    
+    }
+     else { 
+       System.out.println("YOU ENTER AMOUNT TO WITHDERAW IS GRETER THAN YOUR BALANCE PLESS ENTER LESS AMOUNT"); 
+             }
+     }
+    }
+  } 
