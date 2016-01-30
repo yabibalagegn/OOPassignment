@@ -1,0 +1,866 @@
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package BookStoreCommunity;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+/*****************************************************************
+  SUPER CLASS
+*****************************************************************/
+public class BookStoreCommunity {
+    
+        static int g=0x1dc41;
+        String book_name;
+        String book_author;
+        String publisher;
+        int publication_year;
+        int edition_no;               
+        int isbn;
+        int cost;
+        String comment;
+    String employee_name;
+    String status;
+    String sex;
+    int age;
+    int emp_id;
+    double salary; 
+        static ArrayList<BookStoreCommunity> List = new ArrayList<>();
+        static ArrayList<BookStoreCommunity> com = new ArrayList<>();
+        static ArrayList<BookStoreCommunity> sold = new ArrayList<>();
+        static ArrayList<BookStoreCommunity> emp = new ArrayList<>();
+        Scanner scan = new Scanner(System.in);
+/*****************************************************************
+              MAIN METHOD
+     * @param args
+*****************************************************************/
+    public static void main(String[] args)  {
+        int a=0;
+        do
+        {
+       try
+       {
+        BookStoreCommunity b = new BookStoreCommunity();
+        Administrator B =  new Administrator();
+        Costumer C = new Costumer();
+        Employee E = new Employee();
+        Scanner scan = new Scanner(System.in);
+        int choice;
+        int password;
+        do
+        {
+        System.out.println("\t 1. Yabibal");
+        System.out.println("\t 2. Costumer ");
+        System.out.println("\t 3. Employee ");
+        System.out.println("\t 4. About ");
+        System.out.println("\t 5. Exit ");
+        System.out.print(" Enter your choice - ");
+        choice=scan.nextInt();
+        Scanner pass = new Scanner(System.in);
+        switch(choice){   
+            case 1:
+                System.out.print(" Enter your password - ");
+                password = pass.nextInt();
+                if(password==g)
+                {
+                B.chooseA();
+                }
+                else
+                {
+                System.out.println(" You are not authorized !!!.");
+                }
+                 break;                   
+            case 2:
+                C.chooseC();
+                break;
+            case 3:
+                E.chooseE();
+                break;
+            case 4:
+                b.about();
+            case 5:
+                break;
+                
+        }   
+        }while(choice!=5);
+        System.out.println(" Thank you. ");
+        a=1;
+       }
+     catch(Exception e)
+    {
+        //e.printStackTrace();
+        System.out.println(" Please try again !!! " );  
+    }
+    }while(a==0);
+        
+    } 
+/*****************************************************************
+      A METHOD TO DISPLAY BOOKS
+     * @return 
+*****************************************************************/
+    public  String displayBook(){ 
+        String getinfo;
+        getinfo=("  " + book_name + "\t\t" + book_author + "\t\t" + publisher +"\t\t" + publication_year +"\t" + edition_no + "\t\t" + cost +  "\t\t" + isbn + " \n");  
+        return getinfo;
+    }
+/*****************************************************************
+      A METHOD TO DISLAY EMPLOYEES
+     * @return 
+*****************************************************************/
+    public String displayEmployee(){
+        String getemp;
+        getemp=("  " + employee_name + "\t\t\t" + age + "\t\t" + sex +  "\t\t" + salary + "\t\t" + status + "\t\t" + emp_id + "\n");  
+        return getemp;
+   }
+/*****************************************************************
+      A METHOD TO DISPLAY COMMENTS
+     * @return 
+*****************************************************************/
+    public String displaycomment(){
+        String comm;
+        comm= comment+ "\n";
+        return comm;
+    }
+/*************************w****************************************
+      A METHOD TO SEE SOFTWARE DEVELOPERS
+*****************************************************************/
+    public void about(){
+        System.out.println("\n--------------------------------------------------");
+        
+        System.out.println("\t\tSection 4.\n"+
+                "\t\t Book-Store \n"+
+                "--------------------------------------------------\n"+
+                " name \t\t\t\t ID\n"+
+                "--------------------------------------------------\n"+
+                
+                " 1.Yabibal Agegn \t\t eitm/ur/84078/07\n"+
+                " 2.Eyoel Tadios \t\t eitm/ur/83682/07\n"+
+                " 3.Yarde Gashaw \t\t eitm/ur/84080/07\n"+
+                " 5.Haftom fsha  \t\t eitm/ur/83738/07\n"+
+                " 4.Gatswe zelelme \t\t eitm/ur/83725/07\n"+
+                " 6.Hakima   Mehamed  \t\t eitm/ur/83750/07\n");
+                
+    }           
+}
+/*****************************************************************
+        ADMINISTRATOR'S SUBCLASS
+*****************************************************************/
+
+
+
+class Administrator extends BookStoreCommunity{
+    Scanner r = new Scanner(System.in);
+    int k;
+    char c;
+/*****************************************************************
+   A METHOD TO CHOOSE ADMINISTRATR'S WANT
+*****************************************************************/
+    public void chooseA() 
+            {
+        Scanner go = new Scanner(System.in);            
+                do
+                {
+                    try
+                    {
+                    System.out.println("\t 1. Create Book ");
+                    System.out.println("\t 2. Create Employee ");
+                    System.out.println("\t 3. Display Book ");
+                    System.out.println("\t 4. Display Employee ");
+                    System.out.println("\t 5. Search Book ");
+                    System.out.println("\t 6. Delete  Book ");
+                    System.out.println("\t 7. Delete  Employee ");
+                    System.out.println("\t 8. See sold Book ");
+                    System.out.println("\t 9. See comments ");
+                    System.out.println("\t 10.to exit ");                   
+                    System.out.print(" Enter your choice - "); 
+                    k=go.nextInt();             
+                    switch(k){
+                             case 1:
+                                    int n;
+                                    System.out.print(" How many books do you want to enter - ");
+                                    n=r.nextInt();
+                                    for(int i=0; i<n; i++)
+                                    {
+                                     System.out.println("\n Book - " + (i+1));
+                                    createBook();
+                                    }                                    
+                                    break;
+                             case 2:
+                                 int q;
+                                    System.out.print(" How many employees do you want to enter - ");
+                                    q=r.nextInt();
+                                    for(int i=0; i<q; i++)
+                                    {
+                                    System.out.println("\n Employee - " + (i+1));
+                                    createaEmployee();
+                                    }                                   
+                                 break;
+                             case 3:
+                                    if(List.isEmpty())
+                                    {
+                                    System.out.println(" There is no book in store.");
+                                    }
+                                    else
+                                    {
+                                    System.out.println("-----------------------------------------------------------------------------------------------------");
+                                    System.out.println(" \t\t\t Books In Store \t\t");
+                                    System.out.println("-----------------------------------------------------------------------------------------------------");
+                                    System.out.println("No     Book_Name \tBook_Author \tPublisher \tYear \tEdition no \tCost \t\tisbn");
+                                    System.out.println("-----------------------------------------------------------------------------------------------------");
+                                    for(int j=0; j<List.size(); j++)
+                                    {
+                                    System.out.print(j+1 + "    ");
+                                    System.out.print(List.get(j).displayBook());
+                                    }
+                                     System.out.println("-----------------------------------------------------------------------------------------------------");
+                                    }
+                                    break;
+                             case 4:
+                                 if(emp.isEmpty())
+                                    {
+                                    System.out.println(" There is no employee register.");
+                                    }
+                                    else
+                                    {
+                                    System.out.println("--------------------------------------------------------------------------------------------------");
+                                    System.out.println(" \t\t Employees In Book-Store \t\t");
+                                    System.out.println("--------------------------------------------------------------------------------------------------");
+                                    System.out.println("No     Employee_Name \t\tAge \t\tSex \t\tSalary \t\tStatus \t\tID ");
+                                    System.out.println("--------------------------------------------------------------------------------------------------");
+                                    BookStoreCommunity k = new BookStoreCommunity();
+                                    for(int j=0; j<emp.size(); j++)
+                                    {
+                                    System.out.print(j+1 + "    ");
+                                    System.out.print(emp.get(j).displayEmployee());
+                                    }
+                                    System.out.println("--------------------------------------------------------------------------------------------------");
+                                    }
+                                 break;
+                            case 5:
+                                if(List.isEmpty())
+                                {
+                                    System.out.println(" The store is empty.");
+                                }
+                                else
+                                {
+                                    int v;
+                                   System.out.print(" Enter book's isbn to search - ");
+                                   v=r.nextInt();
+                                   search(v);
+                                }
+                                   break;
+                            case 6:
+                                Scanner h = new Scanner(System.in);
+                                int  g;
+                                if(List.isEmpty())
+                                {
+                                    System.out.println(" There are no book's created yet.");
+                                }
+                                else
+                                {
+                                System.out.print(" delete all books(1)  For specific(2) - ");
+                                g=h.nextInt();
+                                if(g==1)
+                                {
+                                 List.clear();
+                                 System.out.println(" The book's in the store has been deleted.");
+                                }
+                                else if(g==2)
+                                {
+                                deleteBook();
+                                }
+                                else
+                                {
+                                    System.out.println(" Try again!.");   
+                                }
+                                }
+                                break;
+                            case 7:
+
+        Scanner l = new Scanner(System.in);
+                                int o;
+                                if(emp.isEmpty())
+                                {
+                                    System.out.println(" there are no employee's registered yet.");
+                                }
+                                else
+                                {
+                                System.out.print(" delete all employee(1)  For specific(2) - ");
+                                o=l.nextInt();
+                                if(o==1)
+                                {
+                                 emp.clear();
+                                 System.out.println(" The employee's in the store has been deleted.");
+                                }
+                                else if(o==2)
+                                {
+                                deleteEmployee();
+                                }
+                                else
+                                {
+                                    System.out.println(" Try again !.");   
+                                }
+                                }
+                                break;
+                            case 8:
+                                  if(sold.isEmpty())
+                                    {
+                                        System.out.println(" There is no book sold ");
+                                    }
+                                  else
+                                  {
+                                   System.out.println("--------------------------------------------------------------------------------------------------");
+                                  System.out.println("No     Employee_Name \t\tAge \t\tSex \t\tSalary \t\tStatus \t\tID ");
+                                   System.out.println("--------------------------------------------------------------------------------------------------");
+                                  for(int y=0; y<sold.size(); y++)
+                                  {                                    
+                                      System.out.print(y+1 + "    ");
+                                      System.out.print(sold.get(y).displayBook());   
+                                  }
+                                   System.out.println("--------------------------------------------------------------------------------------------------");
+                                  }
+                                  break;
+                            case 9:
+                                  if(com.isEmpty())
+                                  {
+                                   System.out.println(" There are no comments left here.");
+                                  }
+                                  else
+                                  {
+                                    System.out.println(" Here are list of custumer comments.");
+                                    System.out.println("--------------------------------------------------------------------------------------------------");
+                                    for(int r=0; r<com.size(); r++)
+                                    {
+                                      System.out.print(r+1 + "    ");
+                                      System.out.print(com.get(r).displaycomment());
+                                    }
+                                   System.out.println("--------------------------------------------------------------------------------------------------");
+                                  }
+                                  break;
+                            case 10:
+                                break;
+                            default: 
+                                  System.out.println(" Try again !!!. ");
+                                  break;
+                    }
+                    
+                    } 
+                        catch(Exception e)
+                        {
+                          System.err.println(" Try again  " + toString());                         
+                            chooseA();                          
+                        }
+                                         
+    }while(k!=10);
+    }
+/*****************************************************************
+     A METHOD TO CREATE BOOK'S
+*****************************************************************/
+    public void createBook(){
+        try{
+       Scanner sa = new Scanner(System.in);
+       BookStoreCommunity newbook = new BookStoreCommunity();
+       System.out.print(" Enter Book's Name - ");
+       newbook.book_name=sa.nextLine();
+       System.out.print(" Enter Book's Author - ");
+       newbook.book_author=sa.nextLine();
+       System.out.print(" Enter Book's Publisher - ");
+       newbook.publisher=sa.nextLine();
+       System.out.print(" Enter Book's Publisher year - ");
+       newbook.publication_year=sa.nextInt();
+       System.out.print(" Enter Book's Edition no - ");
+       newbook.edition_no=sa.nextInt();
+       System.out.print(" Enter Book's Cost - ");
+       newbook.cost=sa.nextInt();
+       if(List.isEmpty())
+       {
+       System.out.print(" Enter isbn no - ");   
+       newbook.isbn=sa.nextInt();
+       List.add(newbook);
+       System.out.println(" You have succssufuly created the book.");
+       }
+       else
+       {
+           int d=1;
+           int x;
+        System.out.print(" Enter isbn no - ");   
+        x=newbook.isbn=sa.nextInt();   
+        for(int i=0; i<List.size(); i++) 
+        {
+         if(List.get(i).isbn==x)
+         {
+             System.out.println(" There is a book with isbn - " + x );   
+         }
+         else if(++d>List.size())
+                 {
+                   List.add(newbook);
+                   System.out.println(" You have succssufuly created the book.");
+                 }
+        
+        }
+       }
+       }
+        catch(Exception e)
+        {
+            System.err.println(" Try again " + toString());
+            createBook();
+        }
+    } 
+    //overloading
+/*****************************************************************
+      A METHOD TO SEARCH BOOK'S
+***********************************1******************************/
+    public void search(int x){ 
+        try
+        {
+        int f=1;
+        for(int b=0; b<List.size(); b++)
+        {
+        if(List.get(b).isbn==x)
+        {
+           System.out.println("-----------------------------------------------------------------------------------------------------");
+           System.out.println("No     Book_Name \tBook_Author \tPublisher \tYear \tEdition no \tCost \t\tisbn");
+           System.out.println("-----------------------------------------------------------------------------------------------------");
+           System.out.print(b+1 + "    ");
+           System.out.print(List.get(b).displayBook());
+           System.out.println("-----------------------------------------------------------------------------------------------------");
+        }
+        else if(List.get(b).isbn!=x )
+        {
+            if(++f>List.size())
+            {    
+            System.out.println(" The book you entered was not found");
+            }
+        }
+        } 
+    
+    }   
+    catch(InputMismatchException ei)
+        {
+          System.out.println(" Try again ");
+          search(x);
+        }
+    }
+/*****************************************************************
+      A METHOD TO CREATE EMPLOYEES
+*****************************************************************/
+    public void createaEmployee(){
+        try
+        {            
+       Scanner em = new Scanner(System.in);
+       Scanner me = new Scanner(System.in);
+       Scanner m = new Scanner(System.in);
+       BookStoreCommunity newemp = new BookStoreCommunity();
+       System.out.print(" Enter Employee's Name - ");
+       newemp.employee_name=em.nextLine();
+       System.out.print(" Enter Employee's Age - ");
+       newemp.age=em.nextInt();
+       System.out.print(" Enter Employee's Sex - ");
+       newemp.sex=me.nextLine();
+       System.out.print(" Enter Employee's Salary - ");
+       newemp.salary=me.nextDouble();
+       System.out.print(" Enter Employee's Status - ");
+       newemp.status=m.nextLine();
+       if(emp.isEmpty())
+       {
+       System.out.print(" Enter Employee's id - ");
+       newemp.emp_id=m.nextInt();
+       emp.add(newemp);
+       System.out.println("\n You have succssufuly created the Employee.");
+       }
+       else
+       {
+           int c=1;
+           int y;
+        System.out.print(" Enter Employee's id - ");
+        y=newemp.emp_id=m.nextInt();  
+        for(int i=0; i<emp.size(); i++) 
+        {
+         if(emp.get(i).emp_id==y)
+         {
+             System.out.println(" There is already an employee with ID - " + y);   
+         }
+         else if(++c>emp.size())
+                 {
+                   emp.add(newemp);
+                   System.out.println("\n You have succssufuly created the Employee.");
+                 }   
+        }
+        }
+        }
+        catch(Exception e)
+        {
+            System.err.println(" Try again " + toString());
+        }
+    } 
+/*****************************************************************
+      A METHOD TO DELETE BOOKS
+*****************************************************************/
+    public void deleteBook() {
+        
+           Scanner h = new Scanner(System.in);
+           int j;
+           int k=1;
+           if(List.isEmpty())
+           {
+               System.out.println(" There is no book created yet.");
+           }
+           else
+           {
+           System.out.print("Enter books isbn to delete - ");
+           j=h.nextInt();
+            for(int i=0;i<List.size();i++)
+                {
+                    if (List.get(i).isbn==j)
+                       {
+        System.out.print("\nThe following book was deleted\n");
+       System.out.println("--------------------------------------------------------------------------------------------------");
+       System.out.println("No     Book_Name \tBook_Author \tPublisher \tYear \tEdition no \tCost \t\tisbn");
+       System.out.println("--------------------------------------------------------------------------------------------------");
+       System.out.print(i+1 + "    ");
+       System.out.print(List.get(i).displayBook());
+       System.out.println("--------------------------------------------------------------------------------------------------");
+       List.remove(List.get(i));
+                  }
+       else if(++k>List.size()) 
+        {
+        System.err.println(" Book was not found");
+                      }
+                }
+       }
+    }
+/*****************************************************************
+      A METHOD TO DELETE EMPLOYEES 
+*****************************************************************/
+    public void deleteEmployee() {
+     
+           Scanner g = new Scanner(System.in);
+           int i;
+           int k=1;
+           if(emp.isEmpty())
+           {
+               System.out.println(" There is no employee registered.");
+           }
+           else
+           {
+           System.out.print("Enter employee's id to delete - ");
+           i=g.nextInt();
+            for(int j=0;j<emp.size();j++)
+                {
+                    if (emp.get(j).emp_id==i)
+                       {
+           System.out.print("\nThe following employee was deleted\n");
+           System.out.println("--------------------------------------------------------------------------------------------------");
+           System.out.println("No     Employee_Name \t\tAge \t\tSex \t\tSalary \t\tStatus \t\tID ");
+           System.out.println("--------------------------------------------------------------------------------------------------");
+           System.out.print(j+1 + "    ");
+           System.out.print(emp.get(j).displayEmployee());
+           System.out.println("--------------------------------------------------------------------------------------------------");
+           emp.remove(emp.get(j));
+                  }
+           else if(++k>emp.size())
+                  {
+          System.err.println(" Employee was not found. ");
+                  }
+                }
+       }
+  }
+}
+/*****************************************************************
+     CUSTUMERS SUBCLASS 
+*****************************************************************/
+
+
+class Costumer extends BookStoreCommunity{
+    int b;
+/*****************************************************************
+     A METHOD TO CHOOSE CUSTUMER'S WANT
+*****************************************************************/
+    public void chooseC(){
+        Scanner s = new Scanner(System.in);
+    do
+    {
+        try
+        {
+    System.out.println("     1.Available Books ");
+    System.out.println("     2.Buy Book ");
+    System.out.println("     3.Leave comment ");
+     System.out.println("     4. to exit ");
+    System.out.print(" Your choice - ");
+    b=s.nextInt();
+    switch(b){
+    case 1:
+        if(List.isEmpty())
+        {
+        System.out.println(" There is no book created yet.");
+        }
+        else
+        {
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+         System.out.println("No     Book_Name \tBook_Author \tPublisher \tYear \tEdition no \tCost \t\tisbn");
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+        for(int c=0; c<List.size(); c++)
+        {
+        System.out.print(c+1 + "    ");
+        System.out.print(List.get(c).displayBook());
+        }
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+        }
+        break;
+    case 2:
+        buyBook();
+        break;
+    case 3:
+        comment();
+        break;
+    case 4:
+        break;
+    default :
+        System.out.println(" Try again!!!");
+    }
+        }
+        catch(Exception e)
+        {
+            System.err.println(" Try again " + toString());
+            chooseC();
+        }
+    }while(b!=4);
+    }    
+/*****************************************************************
+     A METHOD  TO BUY BOOKS
+*****************************************************************/
+    public void buyBook(){
+        try
+        {
+        Scanner se = new Scanner(System.in);
+        int is;
+        int y=0;
+        if(List.isEmpty())
+        {
+         System.out.println(" The store is empty nothing  to buy.");
+        }
+        else
+        {
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+        System.out.println("No     Book_Name \tBook_Author \tPublisher \tYear \tEdition no \tCost \t\tisbn");
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+        for(int d=0; d<List.size(); d++)
+        {
+        System.out.print(d+1 + "    ");
+        System.out.print(List.get(d).displayBook());
+        }
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+        System.out.print(" Enter Book isbn no to buy - ");
+        is=se.nextInt();
+        for(int k=0; k<List.size(); k++)
+        {
+            if(is==List.get(k).isbn){
+            System.out.println("\nYou buy the following book. ");
+            System.out.println("-----------------------------------------------------------------------------------------------------");
+            System.out.println("No     Book_Name \tBook_Author \tPublisher \tYear \tEdition no \tCost \t\tisbn");
+            System.out.println("-----------------------------------------------------------------------------------------------------");
+            System.out.print((k+1) + "\t");
+            System.out.print(List.get(k).displayBook());
+            System.out.println("-----------------------------------------------------------------------------------------------------");
+            Costumer v =new Costumer();
+             v.book_name=List.get(k).book_name;                      
+             v.book_author=List.get(k).book_author;                  
+             v.publisher=List.get(k).publisher;                      
+             v.publication_year=List.get(k).publication_year;
+             v.edition_no=List.get(k).edition_no;
+             v.cost=List.get(k).cost;
+             v.isbn=List.get(k).isbn;
+             sold.add(v);
+             List.remove(List.get(k));
+            System.out.print(" Do you have a comment (Y/N)");
+            String u;
+            Scanner d = new Scanner(System.in);
+            u=d.nextLine();
+            if(u.equalsIgnoreCase("y"))
+            {
+                Costumer x = new Costumer();
+                x.comment();
+            }
+            else
+            {
+                System.out.println(" Thank you for shopping.");
+            }
+            break;
+            
+        }
+            else if(is!=List.get(k).isbn) {
+                if(y>=List.size())
+                {
+                System.out.println(" There is no book with isbn no " + is);
+                y++;
+                        
+                }
+             }
+           }
+        }
+        }
+        catch(Exception e)
+        {
+            System.err.println(" Try again " + toString());
+        }
+    }
+ /*****************************************************************
+     A METHOD TO LEAVE COMMENTS
+*****************************************************************/  
+    public void comment(){
+        Scanner  comment = new Scanner(System.in);
+        Costumer cus = new Costumer();
+        System.out.print("your comment here - ");
+        cus.comment=comment.nextLine();
+        System.out.println(" Thank you.");
+        com.add(cus);
+    }
+}
+/*****************************************************************
+     EMPLOYEE'S SUBCLASS
+*****************************************************************/
+class Employee extends BookStoreCommunity{
+    Scanner em = new Scanner(System.in);
+    int choice;
+    Administrator empl = new Administrator();    
+   
+    public void chooseE(){      
+        Scanner ex = new Scanner(System.in);
+        do
+        {
+            try
+            {
+        System.out.println("\t 1.Create book");
+        System.out.println("\t 2.Display book");
+        System.out.println("\t 3.Search book");
+        System.out.println("\t 4.Employee info");
+        System.out.println("\t 5.to exit.");
+        System.out.print(" Enter your choice - ");
+        choice=ex.nextInt();
+        switch(choice)
+        {
+            case 1:
+                int k;
+         System.out.print(" How many books do you want to enter - ");
+         k=em.nextInt();
+         for(int i=0; i<k; i++)
+           {
+         System.out.println(" Book - " + (i+1));
+         createBook();
+            }
+         System.out.println(" You have succssufully created a book.");
+         break;
+         case 2:
+         displaybook();
+         break;
+         case 3:
+         Employee r = new Employee();
+         if(List.isEmpty())
+        {
+       System.out.println(" The store is empty.");
+        }
+       else
+       {
+       int v;
+      System.out.print(" Enter book's isbn to search - ");
+      v=ex.nextInt();
+       r.search(v);
+        }
+      break;
+      case 4:
+      Scanner y =new Scanner(System.in);
+      if(emp.isEmpty())
+      {
+      System.out.println(" There is no Employee registered.");
+        }
+      else
+      {
+      String e;
+       System.out.print(" To see your info enter your name - ");
+       e=y.nextLine();
+       search(e);
+        }
+       break;
+       case 5:
+       break;
+       default :
+       System.out.println(" Try again !!!.");
+       break;
+                
+        }
+          }
+       catch(Exception e)
+        {
+       System.err.println(" Try again " + toString());
+       chooseE();
+          }
+        }while(choice!=5);
+       
+    }  
+/*****************************************************************
+    A METHOD TO CREATE BOOK'S
+*****************************************************************/  //overriding 
+    public void createBook(){       
+        empl.createBook();          
+    }
+/*****************************************************************
+    A METHOD TO DISPLAY BOOK'S
+*****************************************************************/
+    public void displaybook(){
+        if(List.isEmpty())
+        {
+            System.out.println(" There are no books created yet.");  
+        }
+        else
+        {
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+        System.out.println(" \t\t\t Books In Store \t\t");
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+        System.out.println("No     Book_Name \tBook_Author \tPublisher \tYear \tEdition no \tCost \t\tisbn");
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+        for(int j=0; j<List.size(); j++)
+        {
+        System.out.print(j+1 + "    ");
+        System.out.print((List.get(j).displayBook()));
+        }
+        System.out.println("-----------------------------------------------------------------------------------------------------");
+        }
+    }
+/*****************************************************************
+    A METHOD TO SEARCH BOOK'S
+*****************************************************************/ //overriding  
+    public void search(int y){
+        empl.search(y);
+    }    
+/***************************************************************** 
+    A METHOD TO SEARCH EMPLOYEE'S  
+*****************************************************************/  //overloading  
+    public void search(String r){
+        Scanner y= new Scanner(System.in);
+        int d=1;
+        for(int b=0; b<emp.size(); b++)
+        {
+        if(emp.get(b).employee_name.equals(r))
+        {
+           System.out.println("\nHere are your details ");
+           System.out.println("--------------------------------------------------------------------------------------------------");
+           System.out.println("No     Employee_Name \t\tAge \t\tSex \t\tSalary \t\tStatus \t\tID ");
+           System.out.println("--------------------------------------------------------------------------------------------------");
+           System.out.print(b+1 + "    ");
+           System.out.print(emp.get(b).displayEmployee());
+           System.out.println("--------------------------------------------------------------------------------------------------");
+        }
+        else if(!emp.get(b).employee_name.equals(r) )
+        {
+          if(++d>emp.size()){               
+          System.out.println(" Sorry there is no employee with name  - " + r);
+          }
+        }
+        } 
+    }
+}
